@@ -12,7 +12,7 @@ export default async function (root) {
     try {
       const loader = require(`brownie-${type}`);
 
-      resources[name] = await loader(root, process.env, name, options);
+      resources[name] = await loader(dir, process.env, name, options);
     } catch (e) {
       if (e.code !== 'MODULE_NOT_FOUND') {
         console.error(e.stack || e);
